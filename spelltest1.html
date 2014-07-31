@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+<head>
+<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<style>
+
+ body{
+
+	font-family: 'Architects Daughter';
+	text-align: center;
+}
+#header{
+
+
+width:100%;
+height:44px;
+color:#EE6557;;
+	  
+	margin-top:-10px;
+	margin-left:-20px;
+	margin-right:-40px;
+}
+#next-button
+{
+  width: 100px;
+  height: 50px;
+  border-radius: 100px;
+  background: #EE6557;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+ margin-top:20%;
+ margin-left:45%;
+  box-shadow: 0 0 0 0 #FFFFFF, 0 0 0 0 #EE6557;
+  -webkit-transition: box-shadow 0.28s ease-out;
+  -moz-transition: box-shadow 0.28s ease-out;
+  -o-transition: box-shadow 0.28s ease-out;
+}
+
+#next-button:hover
+{
+  box-shadow: 0 0 0 7px #FFFFFF, 0 0 0 8px #EE6557;
+  cursor: pointer;
+}
+
+#play-button
+{
+  width: 100px;
+  height: 50px;
+  border-radius: 100px;
+  background: #EE6557;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+ margin-top:20%;
+ margin-left:105%;
+  box-shadow: 0 0 0 0 #FFFFFF, 0 0 0 0 #EE6557;
+  -webkit-transition: box-shadow 0.28s ease-out;
+  -moz-transition: box-shadow 0.28s ease-out;
+  -o-transition: box-shadow 0.28s ease-out;
+}
+#play-button:hover
+{
+  box-shadow: 0 0 0 7px #FFFFFF, 0 0 0 8px #EE6557;
+  cursor: pointer;
+}
+.button-text{
+	position:absolute;
+    font-size:25px;
+    margin-left:15px;
+	color:white;
+	margin-top:10px;
+}
+#header-name{
+
+font-size:20px;
+position: absolute;
+margin-left:80%;
+margin-top:-4%;
+
+
+}
+
+#login-logout{
+
+font-size:15px;
+position: absolute;
+margin-left:80%;
+margin-top:-2%;
+
+}
+#spellzone{
+ position: absolute;
+
+	top:20%;
+	margin-left: 35%;
+}
+#studentword{
+
+     font-weight: 400;
+	line-height: 2.0em;
+		font-size: 12.5pt;
+		letter-spacing: .75em;
+		text-align: center;
+		width:300px;
+		 -webkit-appearance: none;
+			 
+			border: 0;
+			background: #eee;
+			box-shadow: inset 0px 0px 1px 0px #a0a1a7;
+			border-radius: 0.35em;
+			 
+			padding: 0.75em 1em 0.75em 1em;
+			-moz-transition: all .25s ease-in-out;
+			-webkit-transition: all .25s ease-in-out;
+			-o-transition: all .25s ease-in-out;
+			-ms-transition: all .25s ease-in-out;
+			transition: all .25s ease-in-out;
+
+}
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+html,
+body {
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+   
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+ 
+
+p{
+  color: #666;
+  cursor:default;
+  font-size:0.8em;
+  margin-top:2em;
+  user-select: none;
+}
+ 
+ 
+
+ 
+
+ ul , li {
+  margin: 0;
+  padding: 0;
+}
+/*********************Ring Menu**********************/
+.ringMenu {
+  width: 100px;
+   
+  position: absolute;
+
+
+
+
+}
+
+.ringMenu:hover {
+
+
+ 
+}
+
+.ringMenu ul {
+  list-style: none;
+  position: relative;
+  width: 100px;
+  color: white;
+  margin-left:100px;
+  margin-top:100px;
+}
+.ringMenu ul a {
+  color: white;
+}
+.ringMenu ul li {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.ringMenu ul li a {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: rgba(255,50,50,0.7);
+  text-align: center;
+  line-height: 100px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+.ringMenu ul li a:hover {
+  background: rgba(230,150,20,0.7);
+  box-shadow: 0 0 0 7px #FFFFFF, 0 0 0 8px #EE6557;
+}
+
+.ringMenu ul li:not(.main) {
+  -webkit-transform: rotate(-180deg) scale(0);
+  -moz-transform: rotate(-180deg) scale(0);
+  -o-transform: rotate(-180deg) scale(0);
+  transform: rotate(-180deg) scale(0);
+  opacity: 0;
+}
+.ringMenu:hover ul li {
+  -webkit-transform: rotate(0) scale(0.7);
+  -moz-transform: rotate(0) scale(0.7);
+  -o-transform: rotate(0) scale(0.7);
+  transform: rotate(0) scale(0.7);
+  opacity: 1;
+}
+.ringMenu ul li.top {
+  -webkit-transform-origin: 50% 122px;
+  -moz-transform-origin: 50% 122px;
+  -o-transform-origin: 50% 122px;
+  transform-origin: 50% 122px;
+  position: absolute;
+  top: -102px;
+  left: 0;
+}
+.ringMenu ul li.bottom {
+  -webkit-transform-origin: 50% -52px;
+  -moz-transform-origin: 50% -52px;
+  -o-transform-origin: 50% -52px;
+  transform-origin: 50% -52px;
+  position: absolute;
+  bottom: -102px;
+  left: 0;
+}
+.ringMenu ul li.right {
+  -webkit-transform-origin: -52px 50%;
+  -moz-transform-origin: -52px 50%;
+  -o-transform-origin: -52px 50%;
+  transform-origin: -52px 50%;
+  position: absolute;
+  top: 0px;
+  right: -102px;
+}
+.ringMenu ul li.left {
+  -webkit-transform-origin: 152px 50%;
+  -moz-transform-origin: 152px 50%;
+  -o-transform-origin: 152px 50%;
+  transform-origin: 152px 50%;
+  position: absolute;
+  top: 0;
+  left: -102px;
+}
+/*************progress-***************/
+.container {
+   position:absolute;
+   margin-top:375px;
+   margin-left:22%;
+  width: 720px;
+  text-align: center;
+}
+
+.container .progress {
+  margin: 0 auto;
+  width: 720px;
+}
+
+.progress {
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.progress-bar {
+  height: 16px;
+  width:0px;
+  border-radius: 4px;
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+  -webkit-transition: 0.4s linear;
+  -moz-transition: 0.4s linear;
+  -o-transition: 0.4s linear;
+  transition: 0.4s linear;
+  -webkit-transition-property: width, background-color;
+  -moz-transition-property: width, background-color;
+  -o-transition-property: width, background-color;
+  transition-property: width, background-color;
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.25), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/*
+ * Note: using adjacent or general sibling selectors combined with
+ *       pseudo classes doesn't work in Safari 5.0 and Chrome 12.
+ *       See this article for more info and a potential fix:
+ *       http://css-tricks.com/webkit-sibling-bug/
+ */
+
+#q1:checked ~ .progress > .progress-bar {
+  width: 36px;
+  background-color: #f63a0f;
+}
+
+#q2:checked ~ .progress > .progress-bar {
+  width: 72px;
+  background-color: #f27011;
+}
+
+#q3:checked ~ .progress > .progress-bar {
+  width: 108px;
+  background-color: #f2b01e;
+}
+
+#q4:checked ~ .progress > .progress-bar {
+  width: 144px;
+  background-color: #f2d31b;
+}
+
+#q5:checked ~ .progress > .progress-bar {
+  width: 180px;
+  background-color: #86e01e;
+}
+#q6:checked ~ .progress > .progress-bar {
+  width: 216px;
+  background-color: #86e01e;
+}
+#q7:checked ~ .progress > .progress-bar {
+  width: 252px;
+  background-color: #86e01e;
+}
+#q8:checked ~ .progress > .progress-bar {
+  width: 288px;
+  background-color: #f63a0f;
+}
+
+#q9:checked ~ .progress > .progress-bar {
+  width: 324px;
+  background-color: #f27011;
+}
+
+#q10:checked ~ .progress > .progress-bar {
+  width: 360px;
+  background-color: #f2b01e;
+}
+
+#q11:checked ~ .progress > .progress-bar {
+  width: 396px;
+  background-color: #f2d31b;
+}
+
+#q12:checked ~ .progress > .progress-bar {
+  width: 432px;
+  background-color: #86e01e;
+}
+#q13:checked ~ .progress > .progress-bar {
+  width: 468px;
+  background-color: #86e01e;
+}
+#q14:checked ~ .progress > .progress-bar {
+  width: 504px;
+  background-color: #86e01e;
+}
+#q15:checked ~ .progress > .progress-bar {
+  width: 540px;
+  background-color: #86e01e;
+}
+#q16:checked ~ .progress > .progress-bar {
+  width: 576px;
+  background-color: #86e01e;
+}
+#q17:checked ~ .progress > .progress-bar {
+  width: 612px;
+  background-color: #86e01e;
+}
+#q18:checked ~ .progress > .progress-bar {
+  width: 648px;
+  background-color: #86e01e;
+}
+#q19:checked ~ .progress > .progress-bar {
+  width: 684px;
+  background-color: #86e01e;
+}
+#q20:checked ~ .progress > .progress-bar {
+  width: 720px;
+  background-color: #86e01e;
+}
+
+
+.radio {
+  display: none;
+}
+
+.label {
+  display: inline-block;
+  margin: 0 1px 10px;
+  padding: 3px 8px;
+  color: #aaa;
+  text-shadow: 0 1px black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.radio:checked + .label {
+  color: white;
+  background: rgba(0, 0, 0, 0.25);
+}
+ 
+
+</style>
+</head>
+<html>
+<div id="header">
+	<h1 class="logo">Spellzite Inventory K-1</h1>
+<p id="header-name">Welcome: Jose Molina</p>
+<p id="login-logout"><a class="a-logout" href="#">Logout</a> | <a href="#" class="a-settings">Settings</a><p>
+
+
+
+</div> <!--/header-->
+ 
+
+ <div class="ringMenu">
+<ul>
+  <li class="main"><a href="#main">My Words</a></li>
+  <li class="top"><a href="quizzes.html">Quizes</a></li>
+  <li class="right"><a href="wordsOurWay.html">Sort</a></li>
+  <li class="bottom"><a href="#bottom">Progress</a></li>
+  <li class="left"><a href="#left">Games</a></li>
+</ul>
+<!-- /.ringMenu --></div>
+
+
+<div id="spellzone">
+<p>Spell the word you hear!</p>
+ 
+<div id="play-button">
+	
+	<p class="button-text">Play</p>
+</div>
+
+<br />
+<input type="text" id="studentword"></input>
+<br />
+ </div>
+<video id="playpan" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=pan" />
+</video>
+<video id="playred" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=red" />
+</video>
+<video id="playpig" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=pig" />
+</video>
+<video id="playmob" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=mob" />
+</video>
+<video id="playdope" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=dope" />
+</video>
+<video id="playbait" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=bait" />
+</video>
+<video id="playsum" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=sum" />
+</video>
+<video id="playfled" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=fled" />
+</video>
+<video id="playtrick" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=trick" />
+</video>
+<video id="playwhite" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=white" />
+</video>
+<video id="playblight" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=blight" />
+</video>
+<video id="playdrift" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=drift" />
+</video>
+<video id="playcouch" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=couch" />
+</video>
+<video id="playhunted" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=hunted" />
+</video>
+<video id="playthrew" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=threw" />
+</video>
+ <video id="playblasted" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=blasted" />
+</video>
+ <video id="playripping" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=ripping" />
+</video>
+ <video id="playflushes" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=flushes" />
+</video>
+ <video id="playchirping" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=chirping" />
+</video>
+<video id="playhollered" style="display:none">
+    <source id="sourceit" src="https://readwithmeapp.com/passage/play?text=hollered" />
+</video>
+<div id="next-button">
+	
+	<p class="button-text">Guess!</p>
+
+</div>
+
+
+<div class="container">
+  <input type="radio" class="radio" name="progress" value="1" id="q1" checked>
+  <label for="q1" class="label">1</label>
+
+  <input type="radio" class="radio" name="progress" value="2" id="q2" >
+  <label for="q2" class="label">2</label>
+
+  <input type="radio" class="radio" name="progress" value="3" id="q3">
+  <label for="q3" class="label">3</label>
+
+  <input type="radio" class="radio" name="progress" value="4" id="q4">
+  <label for="q4" class="label">4</label>
+
+  <input type="radio" class="radio" name="progress" value="5" id="q5">
+  <label for="q5" class="label">5</label>
+
+  <input type="radio" class="radio" name="progress" value="6" id="q6">
+  <label for="q6" class="label">6</label>
+
+  <input type="radio" class="radio" name="progress" value="7" id="q7">
+  <label for="q7" class="label">7</label>
+
+  <input type="radio" class="radio" name="progress" value="8" id="q8">
+  <label for="q8" class="label">8</label>
+
+  <input type="radio" class="radio" name="progress" value="9" id="q9">
+  <label for="q9" class="label">9</label>
+
+  <input type="radio" class="radio" name="progress" value="10" id="q10">
+  <label for="q10" class="label">10</label>
+
+  <input type="radio" class="radio" name="progress" value="11" id="q11">
+  <label for="q11" class="label">11</label>
+
+  <input type="radio" class="radio" name="progress" value="12" id="q12">
+  <label for="q12" class="label">12</label>
+
+  <input type="radio" class="radio" name="progress" value="13" id="q13">
+  <label for="q13" class="label">13</label>
+
+  <input type="radio" class="radio" name="progress" value="14" id="q14">
+  <label for="q14" class="label">14</label>
+
+  <input type="radio" class="radio" name="progress" value="15" id="q15">
+  <label for="q15" class="label">15</label>
+
+  <input type="radio" class="radio" name="progress" value="16" id="q16">
+  <label for="q16" class="label">16</label>
+
+  <input type="radio" class="radio" name="progress" value="17" id="q17">
+  <label for="q17" class="label">17</label>
+
+  <input type="radio" class="radio" name="progress" value="18" id="q18">
+  <label for="q18" class="label">18</label>
+
+  <input type="radio" class="radio" name="progress" value="19" id="q19">
+  <label for="q19" class="label">19</label>
+
+  <input type="radio" class="radio" name="progress" value="20" id="q20">
+  <label for="q20" class="label">20</label>
+
+
+
+  <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+</div>
+
+
+
+<div id="score" style="position:absolute; bottom: 0px">Score: 0</div>
+ 
+
+<script>
+$(function () {
+
+$( "#progressbar" ).progressbar({
+      value: 37
+    });
+
+
+    var words = [{
+        word: 'pan',
+        correct: false,
+        score: 4,
+        type: 'short-a'
+    }, {
+        word: 'red',
+        correct: false,
+        score: 8,
+        type: 'short-e'
+    },{
+        word: 'pig',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'mob',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'dope',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'bait',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'sum',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'fled',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'trick',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'white',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'blight',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'drift',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'drift',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'couch',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'hunted',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'threw',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'blasted',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'ripping',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'flushes',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'chirping',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    },{
+        word: 'hollered',
+        correct: false,
+        score: 4,
+        type: 'short-i'
+    }];
+
+    var i = 0;
+    var increment=0;
+    var score = 0;
+
+    $('#play-button').on('click', function () {
+        document.getElementById('play' + words[i].word).play();
+    });
+
+    $('#next-button').on('click', function () {
+
+    	
+    	increment=(i*36);
+
+      alert(increment);
+
+
+       /*move progress bar*/
+       $('.progress-bar').css({"width":increment});
+
+
+
+
+        if ($('#studentword').val() == words[i].word) {
+            score = score + words[i].score;
+            $('#score').text("Score: " + score);
+           /* alert("awesome job, let's try another word");*/
+            words[i].correct = true;
+        } else {
+            words[i].correct = false;
+        }
+
+        i++;
+        $('#studentword').val('');
+
+        if (i >= words.length) {
+            alert('score = ' + score);
+        }
+
+
+
+
+
+    });
+
+});
+$("#check").click(function () {
+        $(".popup").fadeToggle(150);
+        return false;
+        });
+
+</script>
+
+</html>

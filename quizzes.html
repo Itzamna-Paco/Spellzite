@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<head>
+<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<style>
+
+ body{
+
+	font-family: 'Architects Daughter';
+	text-align: center;
+}
+#header{
+
+
+width:100%;
+height:44px;
+color:#EE6557;;
+	  
+	margin-top:-10px;
+	margin-left:-20px;
+	margin-right:-40px;
+}
+#next-button
+{
+  width: 100px;
+  height: 50px;
+  border-radius: 100px;
+  background: #EE6557;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+ margin-top:20%;
+ margin-left:45%;
+  box-shadow: 0 0 0 0 #FFFFFF, 0 0 0 0 #EE6557;
+  -webkit-transition: box-shadow 0.28s ease-out;
+  -moz-transition: box-shadow 0.28s ease-out;
+  -o-transition: box-shadow 0.28s ease-out;
+}
+
+#next-button:hover
+{
+  box-shadow: 0 0 0 7px #FFFFFF, 0 0 0 8px #EE6557;
+  cursor: pointer;
+}
+
+#play-button
+{
+  width: 100px;
+  height: 50px;
+  border-radius: 100px;
+  background: #EE6557;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+ margin-top:20%;
+ margin-left:105%;
+  box-shadow: 0 0 0 0 #FFFFFF, 0 0 0 0 #EE6557;
+  -webkit-transition: box-shadow 0.28s ease-out;
+  -moz-transition: box-shadow 0.28s ease-out;
+  -o-transition: box-shadow 0.28s ease-out;
+}
+#play-button:hover
+{
+  box-shadow: 0 0 0 7px #FFFFFF, 0 0 0 8px #EE6557;
+  cursor: pointer;
+}
+.button-text{
+	position:absolute;
+    font-size:25px;
+    margin-left:15px;
+	color:white;
+	margin-top:10px;
+}
+#header-name{
+
+font-size:20px;
+position: absolute;
+margin-left:80%;
+margin-top:-4%;
+
+
+}
+
+#login-logout{
+
+font-size:15px;
+position: absolute;
+margin-left:80%;
+margin-top:-2%;
+
+}
+#spellzone{
+ position: absolute;
+
+	top:20%;
+	margin-left: 35%;
+}
+#studentword{
+
+     font-weight: 400;
+	line-height: 2.0em;
+		font-size: 12.5pt;
+		letter-spacing: .75em;
+		text-align: center;
+		width:300px;
+		 -webkit-appearance: none;
+			 
+			border: 0;
+			background: #eee;
+			box-shadow: inset 0px 0px 1px 0px #a0a1a7;
+			border-radius: 0.35em;
+			 
+			padding: 0.75em 1em 0.75em 1em;
+			-moz-transition: all .25s ease-in-out;
+			-webkit-transition: all .25s ease-in-out;
+			-o-transition: all .25s ease-in-out;
+			-ms-transition: all .25s ease-in-out;
+			transition: all .25s ease-in-out;
+
+}
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+html,
+body {
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+   
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+ 
+
+p{
+  color: #666;
+  cursor:default;
+  font-size:0.8em;
+  margin-top:2em;
+  user-select: none;
+  font-size:15px;
+}
+ 
+ 
+
+ 
+
+ ul , li {
+  margin: 0;
+  padding: 0;
+}
+/*********************Ring Menu**********************/
+.ringMenu {
+  width: 100px;
+   
+  position: absolute;
+
+
+
+
+}
+
+.ringMenu:hover {
+
+ 
+ 
+}
+
+.ringMenu ul {
+  list-style: none;
+  position: relative;
+  width: 100px;
+  color: white;
+  margin-left:70px;
+  margin-top:40px;
+}
+.ringMenu ul a {
+  color: white;
+}
+.ringMenu ul li {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.ringMenu ul li a {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: rgba(255,50,50,0.7);
+  text-align: center;
+  line-height: 100px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+.ringMenu ul li a:hover {
+  background: rgba(230,150,20,0.7);
+  box-shadow: 0 0 0 7px #FFFFFF, 0 0 0 8px #EE6557;
+}
+
+.ringMenu ul li:not(.main) {
+  -webkit-transform: rotate(-180deg) scale(0);
+  -moz-transform: rotate(-180deg) scale(0);
+  -o-transform: rotate(-180deg) scale(0);
+  transform: rotate(-180deg) scale(0);
+  opacity: 0;
+}
+.ringMenu:hover ul li {
+  -webkit-transform: rotate(0) scale(0.7);
+  -moz-transform: rotate(0) scale(0.7);
+  -o-transform: rotate(0) scale(0.7);
+  transform: rotate(0) scale(0.7);
+  opacity: 1;
+}
+.ringMenu ul li.top {
+  -webkit-transform-origin: 50% 122px;
+  -moz-transform-origin: 50% 122px;
+  -o-transform-origin: 50% 122px;
+  transform-origin: 50% 122px;
+  position: absolute;
+  top: -102px;
+  left: 0;
+}
+.ringMenu ul li.bottom {
+  -webkit-transform-origin: 50% -52px;
+  -moz-transform-origin: 50% -52px;
+  -o-transform-origin: 50% -52px;
+  transform-origin: 50% -52px;
+  position: absolute;
+  bottom: -102px;
+  left: 0;
+}
+.ringMenu ul li.right {
+  -webkit-transform-origin: -52px 50%;
+  -moz-transform-origin: -52px 50%;
+  -o-transform-origin: -52px 50%;
+  transform-origin: -52px 50%;
+  position: absolute;
+  top: 0px;
+  right: -102px;
+}
+.ringMenu ul li.left {
+  -webkit-transform-origin: 152px 50%;
+  -moz-transform-origin: 152px 50%;
+  -o-transform-origin: 152px 50%;
+  transform-origin: 152px 50%;
+  position: absolute;
+  top: 0;
+  left: -102px;
+}
+/*************gauges-***************/
+ 
+ #canvas1{
+   position:absolute;
+  width:160px;
+   
+  margin-top: 10%;
+  margin-left:18%;
+}
+#canvas2{
+   position:absolute;
+  width:160px;
+  margin:100px ;
+  margin-top: 40%;
+  margin-left:30%;
+}
+#quiz-info{
+
+
+  position: absolute;
+  margin-top:14%;
+  width:300px;
+  margin-left:36%;
+}
+#words-list{
+
+
+  position: absolute;
+  margin-top:20%;
+  margin-left:40%;
+}
+.word-list-word{
+word-spacing:30px;
+  font-size:14px;
+}
+</style>
+</head>
+<html>
+<div id="header">
+	<h1 class="logo">My Quizzes</h1>
+<p  class="word-list-word" id="header-name">Welcome: Jose Molina</p>
+<p id="login-logout"><a class="a-logout" href="#">Logout</a> | <a href="#" class="a-settings">Settings</a><p>
+
+
+
+</div> <!--/header-->
+ 
+
+ <div class="ringMenu">
+<ul>
+  <li class="main"><a href="spelltest1.html">My Words</a></li>
+  <li class="top"><a href="quizzes.html">Quizes</a></li>
+  <li class="right"><a href="wordsOurWay.html">Sort</a></li>
+  <li class="bottom"><a href="#bottom">Progress</a></li>
+  <li class="left"><a href="#left">Games</a></li>
+</ul>
+<!-- /.ringMenu --></div>
+
+ 
+<div id="quiz-info">
+<h2 style="margin:-3px"> Short-a | short-o </h2>
+<h4 style="margin:3px"> Vowel sounds - <span style="color:green">PASSED!</span></h4>
+<p style="margin:3px"> February 23, 2014</p>
+
+
+</div>
+<div id="words-list">
+
+<p  style="word-spacing:30px">dog log <del><strong>hog</strong></del></p>
+<p style="word-spacing:30px"><del><strong>had</strong></del> cat tag bat</p>
+<p style="word-spacing:30px">won bog not dad</p>
+<p style="word-spacing:30px">bag <del><strong>rag</strong></del> pal hot</p>
+<p class="word-list-word"> <del>hid</del><p>
+
+</div>
+<canvas id="canvas1" width="300"  height="300"></canvas>
+
+ 
+
+ 
+
+
+
+
+
+
+   
+</div>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+ 
+   
+
+  var canvas =$('#canvas1')[0];
+
+  var ctx = canvas.getContext("2d");
+
+   var w=canvas.width;
+   var h=canvas.height;
+
+   var degrees=0;
+   var new_degrees=0;
+   var difference=0;
+
+   var color="#EE6557";
+   var bgcolor="lightgray";
+
+   var text;
+
+   var animation_loop, redraw_loop;
+
+   function init(){
+
+    ctx.clearRect(0,0,w,h);
+
+    //backgournd arc
+    ctx.beginPath();
+    ctx.strokeStyle=bgcolor;
+    ctx.lineWidth=30;
+    ctx.arc(w/2,h/2, 100, 0, Math.PI*2, false);
+    ctx.stroke();
+
+    var radians=degrees*Math.PI/180;
+
+    ctx.beginPath();
+    ctx.strokeStyle=color;
+    ctx.lineWidth=30;
+
+    ctx.arc(w/2,h/2, 100, 0-90*Math.PI/180,radians-90*Math.PI/180, false);
+    ctx.stroke();
+
+    ctx.fillStyle=color;
+    ctx.font="50px 'Lato'";
+    text=Math.floor(degrees/360*100)+"%";
+    text_width=ctx.measureText(text).width;
+    ctx.fillText(text, w/2 -text_width/2 , h/2 +15);
+
+
+   }
+
+function draw(){
+
+  if (typeof animation_loop !=undefined){
+
+    clearInterval(animation_loop);
+  }
+
+   /*new_degrees=Math.round(Math.random()*360);*/
+   new_degrees=0.60*360;
+   difference=new_degrees-degrees;
+
+   animation_loop=setInterval(animate_to, 1000/difference);
+
+
+}
+ 
+
+ function animate_to(){
+
+
+  if(degrees==new_degrees) clearInterval(animation_loop);
+
+
+ 
+
+  if (degrees<new_degrees){
+
+    degrees++;
+  } else{
+
+        degrees--;
+    }
+
+    init();
+ }
+   
+draw();
+
+ 
+
+
+
+
+ 
+
+});
+
+
+
+
+
+
+
+
+</script>
+
+ 
+
+
+
+</html>

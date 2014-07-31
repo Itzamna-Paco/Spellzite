@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>
+<style>
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+body{
+	min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+
+	font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+#header{
+
+	background-color: white;
+	height:300px;
+	width:100%;
+}
+#wordList{
+
+postion:absolute;
+height:200px;
+width:800px;
+background-color: white;
+margin-left:23%;
+margin-top:-200px;
+
+
+}
+
+#col-1{
+float:left;
+height:790px;
+width:33%;
+background-color: #B4EEE5;
+
+}
+#col-2{
+float:left;
+height:790px;
+width:33%;
+background-color: #10ACDA;
+}
+#col-3{
+float:left;
+height:790px;
+width:33%;
+
+background-color: #AAF3F3;
+}
+.widget1{
+cursor:move;
+  width:70px;
+  height:50px;
+  background-color:#EE6557;
+  border: 1px solid white;
+  border-radius:30px;
+  margin:5px;
+  float:left;
+  -webkit-transition: box-shadow 0.28s ease-out;
+  -moz-transition: box-shadow 0.28s ease-out;
+  -o-transition: box-shadow 0.28s ease-out;
+
+}
+.widget1:hover{
+
+
+	box-shadow: 0 0 0 7px #FFFFFF, 0 0 0 8px #EE6557;
+}
+.widget2{
+cursor:move;
+  width:70px;
+  height:50px;
+  background-color:#EE6557;
+  border: 1px solid white;
+  border-radius:30px;
+  margin:5px;
+  float:left;
+  -webkit-transition: box-shadow 0.28s ease-out;
+  -moz-transition: box-shadow 0.28s ease-out;
+  -o-transition: box-shadow 0.28s ease-out;
+
+}
+.widget2:hover{
+
+
+	box-shadow: 0 0 0 7px #FFFFFF, 0 0 0 8px #EE6557;
+}
+.widget3{
+cursor:move;
+  width:70px;
+  height:50px;
+  background-color:#EE6557;
+  border: 1px solid white;
+  border-radius:30px;
+  margin:5px;
+  float:left;
+  -webkit-transition: box-shadow 0.28s ease-out;
+  -moz-transition: box-shadow 0.28s ease-out;
+  -o-transition: box-shadow 0.28s ease-out;
+
+}
+.widget3:hover{
+
+
+	box-shadow: 0 0 0 7px #FFFFFF, 0 0 0 8px #EE6557;
+}
+p.word{
+
+font-family:'Verdana';
+font-size: 20px;
+padding:5px;
+
+}
+h3{
+
+	margin-left:30px;
+	margin-top: 10px;
+	padding: 10px;
+
+}
+h5{
+
+	margin-left:30px;
+
+
+}
+a{
+	text-decoration: none;
+}
+.ringMenu {
+  width: 100px;
+   
+  position: absolute;
+
+
+
+
+}
+
+.ringMenu:hover {
+
+
+ 
+}
+
+.ringMenu ul {
+  list-style: none;
+  position: relative;
+  width: 100px;
+  color: white;
+  margin-left:60px;
+  margin-top:60px;
+}
+.ringMenu ul a {
+  color: white;
+}
+.ringMenu ul li {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.ringMenu ul li a {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: rgba(255,50,50,0.7);
+  text-align: center;
+  line-height: 100px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+.ringMenu ul li a:hover {
+  background: rgba(230,150,20,0.7);
+  box-shadow: 0 0 0 7px #FFFFFF, 0 0 0 8px #EE6557;
+}
+
+.ringMenu ul li:not(.main) {
+  -webkit-transform: rotate(-180deg) scale(0);
+  -moz-transform: rotate(-180deg) scale(0);
+  -o-transform: rotate(-180deg) scale(0);
+  transform: rotate(-180deg) scale(0);
+  opacity: 0;
+}
+.ringMenu:hover ul li {
+  -webkit-transform: rotate(0) scale(0.7);
+  -moz-transform: rotate(0) scale(0.7);
+  -o-transform: rotate(0) scale(0.7);
+  transform: rotate(0) scale(0.7);
+  opacity: 1;
+}
+.ringMenu ul li.top {
+  -webkit-transform-origin: 50% 122px;
+  -moz-transform-origin: 50% 122px;
+  -o-transform-origin: 50% 122px;
+  transform-origin: 50% 122px;
+  position: absolute;
+  top: -102px;
+  left: 0;
+}
+.ringMenu ul li.bottom {
+  -webkit-transform-origin: 50% -52px;
+  -moz-transform-origin: 50% -52px;
+  -o-transform-origin: 50% -52px;
+  transform-origin: 50% -52px;
+  position: absolute;
+  bottom: -102px;
+  left: 0;
+}
+.ringMenu ul li.right {
+  -webkit-transform-origin: -52px 50%;
+  -moz-transform-origin: -52px 50%;
+  -o-transform-origin: -52px 50%;
+  transform-origin: -52px 50%;
+  position: absolute;
+  top: 0px;
+  right: -102px;
+}
+.ringMenu ul li.left {
+  -webkit-transform-origin: 152px 50%;
+  -moz-transform-origin: 152px 50%;
+  -o-transform-origin: 152px 50%;
+  transform-origin: 152px 50%;
+  position: absolute;
+  top: 0;
+  left: -102px;
+}
+
+.word-text{
+
+	color:white;
+	 
+	text-align:center;
+	font: bold;
+}
+.animate{
+     float:right;
+	font:12px Montserrat;
+	text-transform: uppercase;
+	background: rgb(0,100,0); color: white;
+	padding: 10px 20px; 
+	border-radius: 5px;
+	cursor: pointer;
+
+}
+.animate:hover{
+
+background: rgb(255,75,0);
+
+}
+.points-label{
+
+    
+    border-color:#EE6557;
+    border-style:solid;
+    border-radius:10px;
+    border-width:2px;
+    padding-top:5px;
+    padding-top:5px;
+    padding-left:10px;
+    padding-right:10px;
+	 
+	position: absolute;
+	margin-left:350px;
+	margin-top: -40px;
+	font-size:30px;
+}
+</style>
+
+
+</head>
+<body>
+<div id="container">
+
+<div id="header">
+
+<div class="ringMenu">
+<ul>
+  <li class="main"><a href="spelltest1.html">My Words</a></li>
+  <li class="top"><a href="quizzes.html">Quizes</a></li>
+  <li class="right"><a href="wordsOurWay.html">Sort</a></li>
+  <li class="bottom"><a href="#bottom">Progress</a></li>
+  <li class="left"><a href="#left">Games</a></li>
+</ul>
+</div>
+ <h1 style="text-align:center; color:#EE6557">Spellzite</h1>
+ <h3 style="postion:absolute; text-align:right; margin-right:20px">Syllable Juncture</h3>
+
+<span class="animate">Animate</span>
+     
+<!-- /.ringMenu --></div>
+
+</div>
+
+
+<div id="content-area">
+
+
+	<div id="wordList">
+
+
+
+	</div>
+
+	<div id="col-1">
+
+	<h3>VCV-closed</h3><p  class="points-label" id="col-1-points">0</p>
+	<p style="text-align:center">Drag me here:</p>
+
+	</div>
+	<div id="col-2">
+<h3> Vowel-Vowel</h3><p class="points-label" id="col-2-points">0</p>
+<p style="text-align:center">Drag me here:</p>
+	</div>
+
+	<div id="col-3">
+<h3>VCCCV</h3><p  class="points-label" id="col-3-points">0</p>
+
+<p style="text-align:center">Drag me here:</p>
+	</div>
+
+
+</div>
+ 
+</div>
+
+
+<div id="videos"  >
+<video id="playcat" controls><source id="sourceit" src="https://readwithmeapp.com/passage/play?text=cat"/></video>
+</div>
+<div id="sound-good">
+	
+  
+
+</div>
+<script>
+$(document).ready(function(){
+
+var cat1=[ 'punish', 'promise', 'modern', 'panic', 'rapid'];
+
+var mixedArr=[];
+
+var word="";
+
+for(var i=0; i<cat1.length; i++){
+
+
+	word=('<div class="widget1">' + cat1[i] + '</div>');
+
+ $('#wordList').append('<div id="' + cat1[i]+'"class="widget1"><p class="word-text"><strong>' + cat1[i] + '</strong></p></div>');
+ mixedArr.push(word);
+
+
+}
+var cat2=['create', 'cruel', 'casual', 'neon', 'lion'];
+
+for(var i=0; i<cat2.length; i++){
+
+word=('<div class="widget2">' + cat2[i] + '</div>');
+ $('#wordList').append('<div id="'+cat2[i] +'" class="widget2"><p class="word-text"><strong>' + cat2[i] + '</strong></p></div>');
+
+ mixedArr.push(word);
+}
+
+var cat3=['athlete', 'ketchup', 'orphan', 'dolphin', 'laughter'];
+
+
+for(var i=0; i<cat3.length; i++){
+
+ word=('<div class="widget3">' + cat3[i] + '</div>');
+ $('#wordList').append('<div id="' +cat3[i]+'"class="widget3"><p class="word-text"><strong>' + cat3[i] + '</strong></p></div>');
+ mixedArr.push(word);
+
+}
+/*
+function shuffleMe (array) {
+  var m = mixedArr.length, t, i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = mixedArr[m];
+    mixedArr[m] = mixedArr[i];
+    mixedArr[i] = t;
+  }
+ 
+}
+shuffleMe(mixedArr);
+alert(mixedArr);
+*/
+
+$('.widget1').draggable();
+$('.widget2').draggable();
+$('.widget3').draggable();
+
+
+var col1Total=0;
+var col2Total=0;
+var col2Total=0;
+ 
+$('#col-1').droppable({
+
+	  
+
+
+      accept: ".widget1",
+      activeClass: "ui-state-hover",
+      hoverClass: "ui-state-active",
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "col-1" )
+           
+
+            col1Total=col1Total+1;
+
+            $('#col-1-points').text(col1Total);
+      }
+    });
+$('#col-2').droppable({
+      accept: ".widget2",
+      activeClass: "ui-state-hover",
+      hoverClass: "ui-state-active",
+      drop: function( event, ui ) {
+
+      	 
+        $( this )
+          .addClass( "col-2" )
+           
+
+            col2Total=col2Total+1;
+
+            $('#col-2-points').text(col2Total);
+
+
+      }
+    });
+$('#col-3').droppable({
+      accept: ".widget3",
+      activeClass: "ui-state-hover",
+      hoverClass: "ui-state-active",
+      drop: function( event, ui ) {
+
+      	 
+        $( this )
+          .addClass( "col-3" )
+           
+
+            col3Total=col3Total+1;
+
+            $('#col-3-points').text(col3Total);
+
+
+      }
+    });
+
+
+for (var i =0; i<mixedArr; i++){
+
+ 
+}
+
+
+
+$('.widget1').on('click', function () {
+
+       var wordtoplay= $(this).text();
+        
+
+       var stringSound="https://readwithmeapp.com/passage/play?text="+wordtoplay;
+
+       var videoToPlay='<video id="play'+wordtoplay+'" controls><source id="sourceit" src="'+stringSound+'"/></video>';
+        
+ 
+        $('#videos').append(videoToPlay);
+
+         document.getElementById('play' + wordtoplay).play();
+
+
+
+    });
+
+$('.widget2').on('click', function () {
+
+       var wordtoplay= $(this).text();
+        
+
+       var stringSound="https://readwithmeapp.com/passage/play?text="+wordtoplay;
+
+       var videoToPlay='<video id="play'+wordtoplay+'" controls><source id="sourceit" src="'+stringSound+'"/></video>';
+        
+ 
+        $('#videos').append(videoToPlay);
+
+         document.getElementById('play' + wordtoplay).play();
+
+
+
+    });
+
+$('.widget3').on('click', function () {
+
+       var wordtoplay= $(this).text();
+        
+
+       var stringSound="https://readwithmeapp.com/passage/play?text="+wordtoplay;
+
+       var videoToPlay='<video id="play'+wordtoplay+'" controls><source id="sourceit" src="'+stringSound+'"/></video>';
+        
+ 
+        $('#videos').append(videoToPlay);
+
+         document.getElementById('play' + wordtoplay).play();
+
+
+
+    });
+
+var d = 0; //delay
+var ry, tz, s; //transform params
+
+//animation time
+$(".animate").on("click", function(){
+
+	
+	//fading out the thumbnails with style
+	$(".widget1").each(function(){
+		d = Math.random()*1000; //1ms to 1000ms delay
+		$(this).delay(d).animate({opacity: 0}, {
+			//while the thumbnails are fading out, we will use the step function to apply some transforms. variable n will give the current opacity in the animation.
+			step: function(n){
+				s = 1-n; //scale - will animate from 0 to 1
+				$(this).css("transform", "scale("+s+")");
+			}, 
+			duration: 1000, 
+		})
+	}).promise().done(function(){
+		//after *promising* and *doing* the fadeout animation we will bring the images back
+		storm();
+	})
+})
+//bringing back the images with style
+function storm()
+{
+
+	$(".widget1").each(function(){
+		d = Math.random()*1000;
+		$(this).delay(d).animate({opacity: 1}, {
+			step: function(n){
+				//rotating the images on the Y axis from 360deg to 0deg
+				ry = (1-n)*360;
+				//translating the images from 1000px to 0px
+				tz = (1-n)*1000;
+				//applying the transformation
+				$(this).css("transform", "rotateY("+ry+"deg) translateZ("+tz+"px)");
+			}, 
+			duration: 3000, 
+			//some easing fun. Comes from the jquery easing plugin.
+			easing: 'easeOutQuint', 
+		})
+	})
+}
+
+
+});
+
+</script>
+</body>
+
+</html>
